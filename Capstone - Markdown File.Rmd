@@ -1,0 +1,52 @@
+---
+title: 'Data Science Specialization Capstone Project'
+author: "A Johnson"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+subtitle: Nextword - A Swiftkey
+---
+
+## Background
+
+The associated Shiny app uses a corpus of English language text from Twitter, news sites, and blogs, provided by the Data Science Specializaion through Coursera. The Shiny app takes input text provided by the user and outputs the most probable next word using a series of prediction algorithms utilizinat three different n-grams (2-words, 3-words, and 4-words). 
+
+```{r, echo = FALSE}
+setwd("C:/Users/ajohns34/Box/Data Science Specialization")
+```
+
+```{r, echo = TRUE}
+    data(mtcars)    
+    covars = c("hp", "mpg", "disp", "wt")
+
+    for (i in covars) {
+        print(i)
+        print(summary(mtcars[[i]]))
+        #writeLines("\n") #writes empty line to separate outputs
+    }
+```
+
+
+## Varying Factors
+
+The user can modify each of the following factors by adjusting the associated slider:
+
+    - Miles per gallon (min: 10, max: 35)
+    - Displacement (min: 70, max: 500, in cu. in.)
+    - Weight (min: 1, max: 6, in 1,000 lbs)
+    
+The user can select to view each model specific to the number of cylinders on the vehicle (4, 6, or 8) be checking/unchecking each box below the sliders (e.g. "Show/Hide Model for 4-Cylinder Vehicles").    
+
+## Plot and Predicted Outcome
+
+The plot displays a color-coded dot for each type of vehicle that corresponds to the user-specified MPG and associated horsepower, given the user-specified displacement and weight of the car.  If any of the "show/hide" checkboxes are selected, the plot also displays the best fitting line from the linear regression model for the associated type of vehicle.
+
+The predicted horsepower for each type of vehicle are also displayed as text below the plot.
+
+##Viewing the App in Action:
+
+The application can be viewed here: https://ajohns34.shinyapps.io/Course_Project/
+
+
+
